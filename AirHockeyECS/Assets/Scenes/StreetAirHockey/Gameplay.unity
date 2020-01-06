@@ -319,7 +319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853623985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42752266, y: 4.9104424, z: -5.9069033}
+  m_LocalPosition: {x: 10.7, y: 4.9104424, z: -26.12}
   m_LocalScale: {x: 4, y: 0.5, z: 4}
   m_Children:
   - {fileID: 1756434484}
@@ -338,7 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798559ed75caaba4d85596b04b731a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sensitivity: 0.05
+  Sensitivity: 400
+  Id: 1
 --- !u!1 &1018842874
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018842874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.57, y: 4.9104424, z: -5.9069033}
+  m_LocalPosition: {x: 10.85, y: 4.9104424, z: 11.57}
   m_LocalScale: {x: 4, y: 0.5, z: 4}
   m_Children:
   - {fileID: 1478346845}
@@ -556,7 +557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798559ed75caaba4d85596b04b731a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sensitivity: 0
+  Sensitivity: 0.005
+  Id: 0
 --- !u!1 &1478346844
 GameObject:
   m_ObjectHideFlags: 0

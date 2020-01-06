@@ -20,6 +20,9 @@ public class PlayerMoveComponent : MonoBehaviour, IConvertGameObjectToEntity
     [SerializeField]
     private float Sensitivity = 0;
 
+    [SerializeField]
+    private int Id = 0;
+
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
     {
         // Call methods on 'dstManager' to create runtime components on 'entity' here. Remember that:
@@ -31,6 +34,6 @@ public class PlayerMoveComponent : MonoBehaviour, IConvertGameObjectToEntity
         //
         // For example,
         //   dstManager.AddComponentData(entity, new Unity.Transforms.Scale { Value = scale });
-        dstManager.AddComponentData(entity, new PlayerMovementData { sensitivity = this.Sensitivity });        
+        dstManager.AddComponentData(entity, new PlayerMovementData { sensitivity = this.Sensitivity, id = this.Id });        
     }
 }

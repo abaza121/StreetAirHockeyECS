@@ -10,6 +10,11 @@ using UnityEngine;
 
 public class PlayerMoveSystem : JobComponentSystem
 {
+    protected override void OnCreate()
+    {
+        this.RequireSingletonForUpdate<TouchInputComponent>();
+    }
+
     // This declares a new kind of job, which is a unit of work to do.
     // The job is declared as an IJobForEach<Translation, Rotation>,
     // meaning it will process all entities in the world that have both
@@ -21,25 +26,18 @@ public class PlayerMoveSystem : JobComponentSystem
     [BurstCompile]
     struct PlayerMoveSystemJob : IJobForEach<PhysicsVelocity, PlayerMovementData>
     {
-        public float3 vector;
+        public TouchInputComponent inputComponent;
         public void Execute(ref PhysicsVelocity physicsVelocity, ref PlayerMovementData playerMovementData)
         {
-            physicsVelocity.Linear += playerMovementData.sensitivity * vector;
+            physicsVelocity.Linear = playerMovementData.sensitivity * playerMovementData.id == 0 ? inputComponent.keyboardPositionDelta : inputComponent.touchPositionDelta;
         }
     }
     
     protected override JobHandle OnUpdate(JobHandle inputDependencies)
     {
-        this.RequireSingletonForUpdate<TouchInputComponent>();
         var job = new PlayerMoveSystemJob();
 
-        // Assign values to the fields on your job here, so that it has
-        // everything it needs to do its work when it runs later.
-        // For example,
-        //     job.deltaTime = UnityEngine.Time.deltaTime;
-
-        job.vector = this.GetSingleton<TouchInputComponent>().touchPositionDelta;
-        
+        job.inputComponent = this.GetSingleton<TouchInputComponent>();
         
         // Now that the job is set up, schedule it to be run. 
         return job.Schedule(this, inputDependencies);

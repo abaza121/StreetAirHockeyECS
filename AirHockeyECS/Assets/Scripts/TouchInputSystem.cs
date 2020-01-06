@@ -24,9 +24,9 @@ public class TouchInputSystem : ComponentSystem
 
         var currentPosition = new float3(-Input.mousePosition.x, Input.mousePosition.z, -Input.mousePosition.y);
         var deltaPosition = lastPosition - currentPosition;
-        Debug.Log(deltaPosition);
         var input = this.GetSingleton<TouchInputComponent>();
         input.touchPositionDelta = deltaPosition;
+        input.keyboardPositionDelta = new float3(Input.GetKey(KeyCode.A) ? 1 : 0, 0, Input.GetKey(KeyCode.D) ? 1 : 0);
         lastPosition = currentPosition;
         this.SetSingleton(input);
     }
