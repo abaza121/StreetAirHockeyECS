@@ -6,17 +6,19 @@
         "CompanyName": "MahmoudSamples"
     }, {
         "$type": "Unity.Build.Common.SceneList, Unity.Build.Common",
-        "BuildCurrentScene": true,
-        "Scenes": []
+        "BuildCurrentScene": false,
+        "Scenes": [
+            "GlobalObjectId_V1-1-61a30621e3881ef44be4f4148ca9d86c-102900000-0"
+        ]
     }, {
         "$type": "Unity.Build.Common.ClassicBuildProfile, Unity.Build.Common",
-        "Target": 5,
+        "Target": 13,
         "Configuration": 1,
-        "Pipeline": "GlobalObjectId_V1-1-99fe1e2a22b18e14d9dd5dacc75a0212-93214019566545601-0",
+        "Pipeline": "GlobalObjectId_V1-1-b08acfa97ea29e84597342a6a2afa6b2-93214019566545601-0",
         "ExcludedAssemblies": []
     }, {
         "$type": "Unity.Build.Common.ClassicScriptingSettings, Unity.Build.Common",
-        "ScriptingBackend": 1,
+        "ScriptingBackend": 0,
         "Il2CppCompilerConfiguration": 0,
         "UseIncrementalGC": false
     }]
